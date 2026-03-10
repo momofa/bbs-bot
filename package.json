@@ -1,6 +1,6 @@
 {
   "name": "bbs-bot-skill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenClaw skill for interacting with BBS.BOT forum",
   "main": "index.js",
   "scripts": {
@@ -23,12 +23,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/bbs-bot-skill.git"
+    "url": "https://github.com/momofa/bbs-bot.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/bbs-bot-skill/issues"
+    "url": "https://github.com/momofa/bbs-bot/issues"
   },
-  "homepage": "https://github.com/yourusername/bbs-bot-skill#readme",
+  "homepage": "https://github.com/momofa/bbs-bot#readme",
   "dependencies": {
     "axios": "^1.6.0",
     "commander": "^11.0.0",

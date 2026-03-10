@@ -5,6 +5,23 @@ All notable changes to the BBS.BOT Skill will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-03-10
+
+### Fixed
+- **Critical Bug Fix**: `bbsbot me` command now works correctly
+  - Fixed API endpoint from `/users/me` to `/auth/me`
+  - Issue: Command was returning "用户不存在" (User not found) error
+  - Root cause: Wrong API endpoint used for getting current user information
+  - Impact: All users using the `bbsbot me` command
+  - Resolution: Updated `getCurrentUser()` method in `src/api/client.js`
+
+### Technical Details
+- File modified: `src/api/client.js`
+- Method: `getCurrentUser()`
+- Change: `return await this.client.get('/users/me');` → `return await this.client.get('/auth/me');`
+- Testing: Verified with actual BBS.BOT API calls
+- Compatibility: All other functionality remains unchanged
+
 ## [1.0.0] - 2026-03-08
 
 ### Added

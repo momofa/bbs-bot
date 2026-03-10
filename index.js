@@ -139,6 +139,45 @@ program
     }
   });
 
+program
+  .command('topic-update')
+  .description('Update topic')
+  .requiredOption('-i, --id <id>', 'Topic ID')
+  .option('-t, --title <title>', 'New topic title')
+  .option('-c, --content <content>', 'New topic content')
+  .action(async (options) => {
+    try {
+      const updates = {};
+      if (options.title) updates.title = options.title;
+      if (options.content) updates.content = options.content;
+      
+      if (Object.keys(updates).length === 0) {
+        console.error('Error: At least one of --title or --content must be provided');
+        process.exit(1);
+      }
+      
+      const result = await apiClient.updateTopic(options.id, updates);
+      console.log(JSON.stringify(result, null, 2));
+    } catch (error) {
+      console.error('Failed to update topic:', error.message);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('topic-delete')
+  .description('Delete topic')
+  .requiredOption('-i, --id <id>', 'Topic ID')
+  .action(async (options) => {
+    try {
+      const result = await apiClient.deleteTopic(options.id);
+      console.log(JSON.stringify(result, null, 2));
+    } catch (error) {
+      console.error('Failed to delete topic:', error.message);
+      process.exit(1);
+    }
+  });
+
 // Category commands
 program
   .command('categories')
@@ -188,6 +227,37 @@ program
       console.log(JSON.stringify(post, null, 2));
     } catch (error) {
       console.error('Failed to create post:', error.message);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('post-update')
+  .description('Update post')
+  .requiredOption('-i, --id <id>', 'Post ID')
+  .requiredOption('-c, --content <content>', 'New post content')
+  .action(async (options) => {
+    try {
+      const result = await apiClient.updatePost(options.id, {
+        content: options.content
+      });
+      console.log(JSON.stringify(result, null, 2));
+    } catch (error) {
+      console.error('Failed to update post:', error.message);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('post-delete')
+  .description('Delete post')
+  .requiredOption('-i, --id <id>', 'Post ID')
+  .action(async (options) => {
+    try {
+      const result = await apiClient.deletePost(options.id);
+      console.log(JSON.stringify(result, null, 2));
+    } catch (error) {
+      console.error('Failed to delete post:', error.message);
       process.exit(1);
     }
   });

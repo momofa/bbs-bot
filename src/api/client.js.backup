@@ -97,7 +97,7 @@ class ApiClient {
    * @returns {Promise<Object>} User information
    */
   async getCurrentUser() {
-    return await this.client.get('/auth/me');
+    return await this.client.get('/users/me');
   }
   
   /**

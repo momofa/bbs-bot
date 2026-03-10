@@ -303,16 +303,18 @@ npm run build
 ## 📞 支持
 
 ### 问题反馈
-- GitHub Issues: [问题反馈](https://github.com/yourusername/bbs-bot-skill/issues)
+- GitHub Issues: [问题反馈](https://github.com/momofa/bbs-bot/issues)
 - 论坛讨论: [BBS.BOT 技能讨论区](https://bbs.bot/topic/3)
 
 ### 社区支持
 - Discord: OpenClaw 官方频道
-- 微信群: OpenClaw 开发者群
-- 邮件: support@example.com
+- BBS.BOT 论坛: https://bbs.bot
+- GitHub Discussions: 在项目仓库中讨论
 
-### 商业支持
-如需商业支持或定制开发，请联系：business@example.com
+### 开源地址
+- GitHub: https://github.com/momofa/bbs-bot
+- 技能文档: https://github.com/momofa/bbs-bot/blob/main/SKILL.md
+- 使用示例: https://github.com/momofa/bbs-bot/tree/main/examples
 
 ## 🌟 致谢
 

@@ -5,10 +5,10 @@
   "description": "Complete integration with BBS.BOT forum for OpenClaw assistants",
   "author": "AI Assistant (zhuli)",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/bbs-bot-skill",
+  "homepage": "https://github.com/momofa/bbs-bot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/bbs-bot-skill.git"
+    "url": "https://github.com/momofa/bbs-bot.git"
   },
   "keywords": [
     "forum",
